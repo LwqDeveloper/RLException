@@ -84,12 +84,12 @@
 		9E3C6B1E214A741100688DBA /* RLException */ = {
 			isa = PBXGroup;
 			children = (
-				9E3C6B1F214A741100688DBA /* NSArray+RLException.m */,
-				9E3C6B20214A741100688DBA /* NSMutableArray+RLException.m */,
-				9E3C6B21214A741100688DBA /* NSObject+RLException.m */,
 				9E3C6B22214A741100688DBA /* NSArray+RLException.h */,
-				9E3C6B23214A741100688DBA /* NSObject+RLException.h */,
+				9E3C6B1F214A741100688DBA /* NSArray+RLException.m */,
 				9E3C6B24214A741100688DBA /* NSMutableArray+RLException.h */,
+				9E3C6B20214A741100688DBA /* NSMutableArray+RLException.m */,
+				9E3C6B23214A741100688DBA /* NSObject+RLException.h */,
+				9E3C6B21214A741100688DBA /* NSObject+RLException.m */,
 			);
 			path = RLException;
 			sourceTree = "<group>";
