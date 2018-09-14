@@ -25,80 +25,83 @@
          */
         NSArray *arrayClassTitles = @[@"__NSArrayM"];
         
+        /** array[3] -[__NSArrayI objectAtIndexedSubscript:]: index 3 beyond bounds [0 .. 2] */
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(objectAtIndexedSubscript:), @selector(rl_mulArray_objectAtIndexedSubscript:));
+        
         /** [array objectAtIndex:3] -[__NSArrayI objectAtIndex:]: index 3 beyond bounds [0 .. 2] */
-        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(objectAtIndex:), @selector(rl_objectAtIndex:));
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(objectAtIndex:), @selector(rl_mulArray_objectAtIndex:));
         
         /** -[__NSArrayM removeObjectsInRange:]: range {3, 1} extends beyond bounds [0 .. 1] */
-        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(removeObjectsInRange:), @selector(rl_removeObjectsInRange:));
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(removeObjectsInRange:), @selector(rl_mulArray_removeObjectsInRange:));
         
-        /** array[3] -[__NSArrayI objectAtIndexedSubscript:]: index 3 beyond bounds [0 .. 2] */
-        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(objectAtIndexedSubscript:), @selector(rl_objectAtIndexedSubscript:));
-        
-        /** [array addObject:nil] -[__NSSingleObjectArrayI addObject:]: unrecognized selector sent to instance 0x604000013850 */
-        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(addObject:), @selector(rl_addObject:));
+        /** [array addObject:nil] -[__NSArrayM insertObject:atIndex:]: object cannot be nil */
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(addObject:), @selector(rl_mulArray_addObject:));
         
         /** *** -[__NSArrayM insertObject:atIndex:]: object cannot be nil */
-        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(insertObject:atIndex:), @selector(rl_insertObject:atIndex:));
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(insertObject:atIndex:), @selector(rl_mulArray_insertObject:atIndex:));
         
         /** -[__NSArrayM replaceObjectAtIndex:withObject:]: index 3 beyond bounds [0 .. 1] */
-        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(replaceObjectAtIndex:withObject:), @selector(rl_replaceObjectAtIndex:withObject:));
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(replaceObjectAtIndex:withObject:), @selector(rl_mulArray_replaceObjectAtIndex:withObject:));
         
-        /** -[__NSPlaceholderArray initWithObjects:count:]: pointer to objects array is NULL but length is 2 */
-//        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(initWithObjects:count:), @selector(rl_initWithObjects:count:));
+        /** -[__NSArrayM objectForKeyedSubscript:]: unrecognized selector sent to instance 0x60000044ada0 */
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(objectForKeyedSubscript:), @selector(rl_mulArray_objectForKeyedSubscript:));
+        
+        /** -[__NSArrayM objectForKey:]: unrecognized selector sent to instance 0x604000220000 */
+        RLSwizzleInstanceMethodNames(arrayClassTitles, @selector(objectForKey:), @selector(rl_mulArray_objectForKey:));
     });
 }
 
-- (id)rl_objectAtIndex:(NSUInteger)index
+- (id)rl_mulArray_objectAtIndex:(NSUInteger)index
 {
     if (index < self.count) {
-        return [self rl_objectAtIndex:index];
+        return [self rl_mulArray_objectAtIndex:index];
     }
     NSLog(@"RLException %@:%@ out index", NSStringFromClass([self class]), @(index));
     return nil;
 }
 
-- (id)rl_objectAtIndexedSubscript:(NSUInteger)index
+- (id)rl_mulArray_objectAtIndexedSubscript:(NSUInteger)index
 {
     if (index < self.count) {
-        return [self rl_objectAtIndexedSubscript:index];
+        return [self rl_mulArray_objectAtIndexedSubscript:index];
     }
     NSLog(@"RLException %@:%@ out index", NSStringFromClass([self class]), @(index));
     return nil;
 }
 
-- (void)rl_addObject:(id)object
+- (void)rl_mulArray_addObject:(id)object
 {
     if (object) {
-        [self rl_addObject:object];
+        [self rl_mulArray_addObject:object];
         return ;
     }
     NSLog(@"RLException %@:add object is nill", NSStringFromClass([self class]));
 }
 
-- (void)rl_removeObjectsInRange:(NSRange)range
+- (void)rl_mulArray_removeObjectsInRange:(NSRange)range
 {
     if (range.location <= self.count -1 &&
         range.location +range.length <= self.count) {
-        [self rl_removeObjectsInRange:range];
+        [self rl_mulArray_removeObjectsInRange:range];
         return ;
     }
     NSLog(@"RLException %@:RemoveObjectsInRange {%@, %@} extens beyoud bounds [0 .. %@]", NSStringFromClass([self class]),@(range.location), @(range.length), @(self.count -1));
 }
 
-- (void)rl_insertObject:(id)anObject atIndex:(NSUInteger)index
+- (void)rl_mulArray_insertObject:(id)anObject atIndex:(NSUInteger)index
 {
     if (!anObject) {
-        NSLog(@"RLException %@:insert object is nill", NSStringFromClass([self class]));
+        NSLog(@"RLException %@:insert object is nill, index:%@", NSStringFromClass([self class]), @(index));
         return ;
     }
     if (index > self.count) {
         NSLog(@"RLException %@:insert index %@ beyound bounds [0 .. %@]", NSStringFromClass([self class]),@(index), @(self.count -1));
         return ;
     }
-    [self rl_insertObject:anObject atIndex:index];
+    [self rl_mulArray_insertObject:anObject atIndex:index];
 }
 
-- (void)rl_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
+- (void)rl_mulArray_replaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
 {
     if (!anObject) {
         NSLog(@"RLException %@:replace object is nill", NSStringFromClass([self class]));
@@ -108,7 +111,19 @@
         NSLog(@"RLException %@:replace index %@ beyound bounds [0 .. %@]", NSStringFromClass([self class]),@(index), @(self.count -1));
         return ;
     }
-    [self rl_replaceObjectAtIndex:index withObject:anObject];
+    [self rl_mulArray_replaceObjectAtIndex:index withObject:anObject];
+}
+
+- (id)rl_mulArray_objectForKeyedSubscript:(id)key
+{
+    NSLog(@"RLException %@:can't objectForKeyedSubscript:%@", NSStringFromClass([self class]), key);
+    return nil;
+}
+
+- (id)rl_mulArray_objectForKey:(id)key
+{
+    NSLog(@"RLException %@:can't objectForKey:%@", NSStringFromClass([self class]), key);
+    return nil;
 }
 
 @end
