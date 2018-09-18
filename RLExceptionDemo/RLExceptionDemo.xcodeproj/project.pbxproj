@@ -13,11 +13,13 @@
 		9E3C6B12214A740200688DBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E3C6B11214A740200688DBA /* Assets.xcassets */; };
 		9E3C6B15214A740200688DBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E3C6B13214A740200688DBA /* LaunchScreen.storyboard */; };
 		9E3C6B18214A740200688DBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C6B17214A740200688DBA /* main.m */; };
-		9E3C6B25214A741100688DBA /* NSArray+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C6B1F214A741100688DBA /* NSArray+RLException.m */; };
-		9E3C6B26214A741100688DBA /* NSMutableArray+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C6B20214A741100688DBA /* NSMutableArray+RLException.m */; };
-		9E3C6B27214A741100688DBA /* NSObject+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C6B21214A741100688DBA /* NSObject+RLException.m */; };
-		9EC30E3D214BB0AE00CC2FB2 /* NSDictionary+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC30E39214BB0AD00CC2FB2 /* NSDictionary+RLException.m */; };
-		9EC30E3E214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC30E3B214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.m */; };
+		9E88A80921509528008EFD6D /* RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A80821509528008EFD6D /* RLException.m */; };
+		9E88A81721509623008EFD6D /* NSDictionary+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A80C21509623008EFD6D /* NSDictionary+RLException.m */; };
+		9E88A81821509623008EFD6D /* NSMutableDictionary+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A80D21509623008EFD6D /* NSMutableDictionary+RLException.m */; };
+		9E88A81921509623008EFD6D /* NSObject+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A81021509623008EFD6D /* NSObject+RLException.m */; };
+		9E88A81A21509623008EFD6D /* NSArray+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A81321509623008EFD6D /* NSArray+RLException.m */; };
+		9E88A81B21509623008EFD6D /* NSMutableArray+RLException.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A81421509623008EFD6D /* NSMutableArray+RLException.m */; };
+		9E88A81E215096DF008EFD6D /* NSObject+RLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E88A81D215096DF008EFD6D /* NSObject+RLHook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,16 +33,20 @@
 		9E3C6B14214A740200688DBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E3C6B16214A740200688DBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E3C6B17214A740200688DBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9E3C6B1F214A741100688DBA /* NSArray+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+RLException.m"; sourceTree = "<group>"; };
-		9E3C6B20214A741100688DBA /* NSMutableArray+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+RLException.m"; sourceTree = "<group>"; };
-		9E3C6B21214A741100688DBA /* NSObject+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RLException.m"; sourceTree = "<group>"; };
-		9E3C6B22214A741100688DBA /* NSArray+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+RLException.h"; sourceTree = "<group>"; };
-		9E3C6B23214A741100688DBA /* NSObject+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RLException.h"; sourceTree = "<group>"; };
-		9E3C6B24214A741100688DBA /* NSMutableArray+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+RLException.h"; sourceTree = "<group>"; };
-		9EC30E39214BB0AD00CC2FB2 /* NSDictionary+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RLException.m"; sourceTree = "<group>"; };
-		9EC30E3A214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+RLException.h"; sourceTree = "<group>"; };
-		9EC30E3B214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+RLException.m"; sourceTree = "<group>"; };
-		9EC30E3C214BB0AE00CC2FB2 /* NSDictionary+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RLException.h"; sourceTree = "<group>"; };
+		9E88A80721509528008EFD6D /* RLException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLException.h; sourceTree = "<group>"; };
+		9E88A80821509528008EFD6D /* RLException.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLException.m; sourceTree = "<group>"; };
+		9E88A80B21509623008EFD6D /* NSMutableDictionary+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+RLException.h"; sourceTree = "<group>"; };
+		9E88A80C21509623008EFD6D /* NSDictionary+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RLException.m"; sourceTree = "<group>"; };
+		9E88A80D21509623008EFD6D /* NSMutableDictionary+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+RLException.m"; sourceTree = "<group>"; };
+		9E88A80E21509623008EFD6D /* NSDictionary+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RLException.h"; sourceTree = "<group>"; };
+		9E88A81021509623008EFD6D /* NSObject+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RLException.m"; sourceTree = "<group>"; };
+		9E88A81121509623008EFD6D /* NSObject+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RLException.h"; sourceTree = "<group>"; };
+		9E88A81321509623008EFD6D /* NSArray+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+RLException.m"; sourceTree = "<group>"; };
+		9E88A81421509623008EFD6D /* NSMutableArray+RLException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+RLException.m"; sourceTree = "<group>"; };
+		9E88A81521509623008EFD6D /* NSArray+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+RLException.h"; sourceTree = "<group>"; };
+		9E88A81621509623008EFD6D /* NSMutableArray+RLException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+RLException.h"; sourceTree = "<group>"; };
+		9E88A81C215096DF008EFD6D /* NSObject+RLHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+RLHook.h"; sourceTree = "<group>"; };
+		9E88A81D215096DF008EFD6D /* NSObject+RLHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RLHook.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,18 +96,46 @@
 		9E3C6B1E214A741100688DBA /* RLException */ = {
 			isa = PBXGroup;
 			children = (
-				9E3C6B22214A741100688DBA /* NSArray+RLException.h */,
-				9E3C6B1F214A741100688DBA /* NSArray+RLException.m */,
-				9E3C6B24214A741100688DBA /* NSMutableArray+RLException.h */,
-				9E3C6B20214A741100688DBA /* NSMutableArray+RLException.m */,
-				9EC30E3C214BB0AE00CC2FB2 /* NSDictionary+RLException.h */,
-				9EC30E39214BB0AD00CC2FB2 /* NSDictionary+RLException.m */,
-				9EC30E3A214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.h */,
-				9EC30E3B214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.m */,
-				9E3C6B23214A741100688DBA /* NSObject+RLException.h */,
-				9E3C6B21214A741100688DBA /* NSObject+RLException.m */,
+				9E88A81221509623008EFD6D /* Array */,
+				9E88A80A21509623008EFD6D /* Dictionary */,
+				9E88A80F21509623008EFD6D /* Object */,
+				9E88A80721509528008EFD6D /* RLException.h */,
+				9E88A80821509528008EFD6D /* RLException.m */,
 			);
 			path = RLException;
+			sourceTree = "<group>";
+		};
+		9E88A80A21509623008EFD6D /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				9E88A80E21509623008EFD6D /* NSDictionary+RLException.h */,
+				9E88A80C21509623008EFD6D /* NSDictionary+RLException.m */,
+				9E88A80B21509623008EFD6D /* NSMutableDictionary+RLException.h */,
+				9E88A80D21509623008EFD6D /* NSMutableDictionary+RLException.m */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		9E88A80F21509623008EFD6D /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				9E88A81C215096DF008EFD6D /* NSObject+RLHook.h */,
+				9E88A81D215096DF008EFD6D /* NSObject+RLHook.m */,
+				9E88A81121509623008EFD6D /* NSObject+RLException.h */,
+				9E88A81021509623008EFD6D /* NSObject+RLException.m */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		9E88A81221509623008EFD6D /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				9E88A81521509623008EFD6D /* NSArray+RLException.h */,
+				9E88A81321509623008EFD6D /* NSArray+RLException.m */,
+				9E88A81621509623008EFD6D /* NSMutableArray+RLException.h */,
+				9E88A81421509623008EFD6D /* NSMutableArray+RLException.m */,
+			);
+			path = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,14 +208,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E3C6B25214A741100688DBA /* NSArray+RLException.m in Sources */,
-				9EC30E3D214BB0AE00CC2FB2 /* NSDictionary+RLException.m in Sources */,
-				9E3C6B26214A741100688DBA /* NSMutableArray+RLException.m in Sources */,
+				9E88A81A21509623008EFD6D /* NSArray+RLException.m in Sources */,
+				9E88A80921509528008EFD6D /* RLException.m in Sources */,
+				9E88A81B21509623008EFD6D /* NSMutableArray+RLException.m in Sources */,
+				9E88A81821509623008EFD6D /* NSMutableDictionary+RLException.m in Sources */,
+				9E88A81921509623008EFD6D /* NSObject+RLException.m in Sources */,
 				9E3C6B0D214A740100688DBA /* ViewController.m in Sources */,
 				9E3C6B18214A740200688DBA /* main.m in Sources */,
 				9E3C6B0A214A740100688DBA /* AppDelegate.m in Sources */,
-				9E3C6B27214A741100688DBA /* NSObject+RLException.m in Sources */,
-				9EC30E3E214BB0AE00CC2FB2 /* NSMutableDictionary+RLException.m in Sources */,
+				9E88A81E215096DF008EFD6D /* NSObject+RLHook.m in Sources */,
+				9E88A81721509623008EFD6D /* NSDictionary+RLException.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

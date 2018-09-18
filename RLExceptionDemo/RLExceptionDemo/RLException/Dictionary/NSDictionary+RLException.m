@@ -7,17 +7,14 @@
 //
 
 #import "NSDictionary+RLException.h"
-#import "NSObject+RLException.h"
+#import "NSObject+RLHook.h"
 
 @implementation NSDictionary (RLException)
 
-+ (void)load
++ (void)rl_filterDictionary
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        /** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[1] */
-        RLSwizzleInstanceMethodNames(@[@"__NSPlaceholderDictionary"], @selector(initWithObjects:forKeys:count:), @selector(rl_dict_initWithObjects:forKeys:count:));
-    });
+    /** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[1] */
+    RLSwizzleInstanceMethodNames(@[@"__NSPlaceholderDictionary"], @selector(initWithObjects:forKeys:count:), @selector(rl_dict_initWithObjects:forKeys:count:));
 }
 
 - (instancetype)rl_dict_initWithObjects:(id  _Nonnull const [])objects forKeys:(id<NSCopying>  _Nonnull const [])keys count:(NSUInteger)cnt

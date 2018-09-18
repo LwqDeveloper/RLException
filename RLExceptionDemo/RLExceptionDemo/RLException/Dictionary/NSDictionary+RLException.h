@@ -1,5 +1,5 @@
 //
-//  NSMutableDictionary+RLException.h
+//  NSDictionary+RLException.h
 //  RLExceptionDemo
 //
 //  Created by 李韦琼(Weiqiong Li)-顺丰科技 on 2018/9/14.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSMutableDictionary (RLException)
+@interface NSDictionary (RLException)
+
++ (void)rl_filterDictionary;
 
 @end

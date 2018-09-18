@@ -7,24 +7,21 @@
 //
 
 #import "NSMutableDictionary+RLException.h"
-#import "NSObject+RLException.h"
+#import "NSObject+RLHook.h"
 
 @implementation NSMutableDictionary (RLException)
 
-+ (void)load
++ (void)rl_filterMultableDictionary
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        /** -[__NSDictionaryM setObject:forKeyedSubscript:]: key cannot be nil */
-        RLSwizzleInstanceMethodNames(@[@"__NSDictionaryM"], @selector(setObject:forKeyedSubscript:), @selector(rl_mulDict_setObject:forKeyedSubscript:));
-        
-        /** -[__NSDictionaryM setObject:forKey:]: key cannot be nil */
-        /** -[__NSDictionaryM setObject:forKey:]: object cannot be nil (key: 2) */
-        RLSwizzleInstanceMethodNames(@[@"__NSDictionaryM"], @selector(setObject:forKey:), @selector(rl_mulDict_setObject:forKey:));
-        
-        /** -[__NSDictionaryM removeObjectForKey:]: key cannot be nil */
-        RLSwizzleInstanceMethodNames(@[@"__NSDictionaryM"], @selector(removeObjectForKey:), @selector(rl_mulDict_removeObjectForKey:));
-    });
+    /** -[__NSDictionaryM setObject:forKeyedSubscript:]: key cannot be nil */
+    RLSwizzleInstanceMethodNames(@[@"__NSDictionaryM"], @selector(setObject:forKeyedSubscript:), @selector(rl_mulDict_setObject:forKeyedSubscript:));
+    
+    /** -[__NSDictionaryM setObject:forKey:]: key cannot be nil */
+    /** -[__NSDictionaryM setObject:forKey:]: object cannot be nil (key: 2) */
+    RLSwizzleInstanceMethodNames(@[@"__NSDictionaryM"], @selector(setObject:forKey:), @selector(rl_mulDict_setObject:forKey:));
+    
+    /** -[__NSDictionaryM removeObjectForKey:]: key cannot be nil */
+    RLSwizzleInstanceMethodNames(@[@"__NSDictionaryM"], @selector(removeObjectForKey:), @selector(rl_mulDict_removeObjectForKey:));
 }
 
 - (void)rl_mulDict_setObject:(id)obj forKeyedSubscript:(id<NSCopying>)key

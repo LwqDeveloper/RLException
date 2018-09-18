@@ -1,8 +1,8 @@
 //
-//  NSObject+RLException.h
-//  RLException
+//  NSObject+RLHook.h
+//  RLExceptionDemo
 //
-//  Created by 李韦琼(Weiqiong Li)-顺丰科技 on 2018/9/13.
+//  Created by 李韦琼(Weiqiong Li)-顺丰科技 on 2018/9/18.
 //  Copyright © 2018年 李韦琼(Weiqiong Li)-顺丰科技. All rights reserved.
 //
 
@@ -16,10 +16,10 @@ void RLSwizzleClassMethodNames(NSArray *classNames, SEL originSelector, SEL swiz
 
 void RLSwizzleInstanceMethodNames(NSArray *classNames, SEL originSelector, SEL swizzleSelector);
 
-@interface NSObject (RLException)
-
-+ (void)rl_swizzleClassMethod:(SEL)originSelector withSwizzleMethod:(SEL)swizzleSelector;
+@interface NSObject (RLHook)
 
 - (void)rl_swizzleInstanceMethod:(SEL)originSelector withSwizzleMethod:(SEL)swizzleSelector;
+
++ (void)rl_swizzleClassMethod:(SEL)originSelector withSwizzleMethod:(SEL)swizzleSelector;
 
 @end

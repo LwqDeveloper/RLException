@@ -10,4 +10,6 @@
 
 @interface NSMutableArray (RLException)
 
++ (void)rl_filterMultableArray;
+
 @end

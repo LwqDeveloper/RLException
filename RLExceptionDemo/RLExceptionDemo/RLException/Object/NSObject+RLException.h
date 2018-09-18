@@ -1,5 +1,5 @@
 //
-//  NSArray+RLException.h
+//  NSObject+RLException.h
 //  RLException
 //
 //  Created by 李韦琼(Weiqiong Li)-顺丰科技 on 2018/9/13.
@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (RLException)
+@interface NSObject (RLException)
+
++ (void)rl_filterObject;
 
 @end
+

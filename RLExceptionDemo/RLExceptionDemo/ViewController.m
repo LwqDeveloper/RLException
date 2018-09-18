@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "RLException.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -21,6 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"RLExceptionDemo";
+    [RLException rl_startFilterExceptionType:RLExceptionFilterTypeAll];
     [self initDatas];
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.delegate = self;
@@ -119,6 +121,11 @@
                                  @{@"title":@"[mulDict removeObject_forKey]]",@"content":@"mulDict_removeObject_forKey"},
                                  ];
     [self.datas addObject:@{@"title":@"NSDictionary",@"contents":mulDictContents}];
+    
+    NSArray *objectContents = @[
+                                @{@"title":@"[number length]",@"content":@"object_unselector"},
+                                 ];
+    [self.datas addObject:@{@"title":@"NSObject",@"contents":objectContents}];
 }
 
 #pragma mark - NSArray
@@ -257,6 +264,14 @@
     NSString *object = nil;
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:@{@"0":@"1"}];
     [dict removeObjectForKey:object];
+    NSLog(@"-----------------------------------------------------------------------");
+}
+
+#pragma mark - NSObject
+- (void)object_unselector
+{
+    NSString *object = (NSString *)@(2);
+    NSLog(@"%@",@([object length]));
     NSLog(@"-----------------------------------------------------------------------");
 }
 
